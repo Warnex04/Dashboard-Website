@@ -22,7 +22,7 @@ To view and interact with the dashboard, ensure you have the following:
 This initial version does not require any installation or server setup. Simply clone the repository and open the `index.html` file in your web browser to start exploring the dashboard.
 
 ```bash
-git clone https://github.com/your-username/your-repository-name.git
+git clone https://github.com/Warnex04/Dashboard-Website.git
 ```
 ## Work in Progress (WIP) Features
 
