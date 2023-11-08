@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #131518; /* Couleur de fond noire pour tout le corps du document */
+    color: white; /* Pour une meilleure lisibilité sur fond noir */
+}
+
+nav {
+    background-color: transparent;
+    color: white;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px; /* Ajout d'un padding pour augmenter la zone cliquable */
+    display: block; /* Pour que le padding fonctionne correctement */
+    border-bottom: 2px solid rgba(0,125,50, 0); /* Ligne verte en bas de l'élément survolé */
+}
+
+nav ul li a:hover {
+    background-color: #1c1c1c; /* Un gris plus foncé pour le survol */
+    border-bottom: 2px solid rgba(0,125,50, 1); /* Ligne verte en bas de l'élément survolé */
+}
+
+
+h1 {
+    text-align: center;
+}
+
+#upload-form{
+    text-align: center;
+}
+
+#scatterPlot {
+    width: auto;
+    max-width: 1000px; /* Or whatever maximum width you desire */
+    margin: 0 auto; /* This will center the canvas if it is smaller than the max-width */
+}
+
+
+.chart-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates three columns */
+    grid-gap: 1%; /* Space between charts */
+    padding: 10px;
+    max-width: 80%; /* Or 100% if you want it to be full width */
+    margin: auto; /* This centers the grid in the parent */
+  }
+  
+  .chart-item {
+    background: #fff;
+    border: 1px solid #ddd; /* Optional border */
+    padding: 10px;
+  }
+  
+  canvas {
+    width: 100% !important;
+    height: auto !important; /* Override to make it responsive */
+  }
+  
