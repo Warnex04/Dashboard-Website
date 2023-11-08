@@ -14,10 +14,28 @@
             <li><a href="about.html">About</a></li>
         </ul>
     </nav>
-    <div class="bg-image">
-        <img src="Back.jpg" alt="Dataset Iris">
-    </div>
-
+  
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="patt1" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+            <path d="M0,7.5C12.9,7.5 17.1,22.5 30,22.5C42.9,22.5 47.1,7.5 60,7.5" stroke="#f00" stroke-width="1" fill="transparent"/>
+          </pattern>
+          <!-- ...Other patterns like patt2, patt3, and patt4 defined similarly... -->
+          <linearGradient id="grad1" x1="0" x2="0.15" spreadMethod="repeat">
+            <stop offset="0%" stop-color="white" stop-opacity="1.0"/>
+            <stop offset="75%" stop-color="white" stop-opacity="0.0"/>
+          </linearGradient>
+          <!-- ...Other gradients like grad2 defined similarly... -->
+        </defs>
+        <mask id="mask1">
+          <rect fill="url(#grad1)" width="400" height="200"/>
+        </mask>
+        <!-- ...Other masks like mask2 defined similarly... -->
+        
+        <rect id="squiggle1" mask="url(#mask1)" fill="url(#patt1)" width="200" height="200"/>
+        <!-- ...Other rectangles like squiggle2, squiggle3, and squiggle4 defined similarly... -->
+      </svg>
+      
 
     <div class="bg-text">
         <h2 id="animated-intro">Project web: Creation of a dashboard</h2>

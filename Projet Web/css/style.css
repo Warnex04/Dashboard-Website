@@ -205,6 +205,46 @@ body, html {
     transform: scale(0.9);
     fill: #333333;
   }
+/* Try */
+body {
+    background: #131518;
+  }
   
+  #patt1 path {
+    stroke: #ff509e; /* magenta */
+  }
   
+  #patt2 path {
+    stroke: #95d13c; /* lime */
+  }
+  
+  #patt3 path {
+    stroke: #00b6cb; /* aqua */
+  }
+  
+  #patt4 path {
+    stroke: #9753e1; /* purple */
+  }
+  
+  #mask1 rect {
+    animation: pulse 1.90476s infinite;
+    animation-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950);
+  }
+  
+  #mask2 rect {
+    x: 10;
+    animation: pulse 1.90476s infinite;
+    animation-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    animation-delay: 0.47619s; /* This is the duration divided by 4 */
+  }
+  
+  #squiggle1, #squiggle2, #squiggle3, #squiggle4 {
+    background-blend-mode: multiply;
+  }
+  
+  @keyframes pulse {
+    0% { transform: translateX(10px); } /* Using translateX for proper animation */
+    50% { transform: translateX(-20px); }
+    100% { transform: translateX(-50px); }
+  }
   
