@@ -27,6 +27,8 @@ nav {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1e2121",endColorstr="#545e5e",GradientType=1);
     border: 3px solid linear-gradient(325deg, rgba(30,33,33,1) 0%, rgba(68,75,75,1) 50%, rgba(84,94,94,1) 100%);
     border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Horizontal offset, Vertical offset, Blur radius, Color */
+
 }
 
 nav ul {
@@ -46,6 +48,8 @@ nav ul li a {
     padding: 5px 10px; /* Padding to increase clickable area */
     display: block; /* For padding to work correctly */
     border-bottom: 2px solid rgba(0,125,50, 0); /* Green line below the hovered item */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Horizontal offset, Vertical offset, Blur radius, Color */
+
 }
 
 nav ul li a:hover {
@@ -55,6 +59,9 @@ nav ul li a:hover {
 
 h1 {
     text-align: center;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Horizontal offset, Vertical offset, Blur radius, Color */
+     
+    
 }
 
 
@@ -66,31 +73,36 @@ h1 {
 }
 
 .team-member {
-    text-align: center; /* Centre le texte sous les images */
-    max-width: 15%; /* La largeur maximale pour les membres de l'équipe */
+    text-align: center; /* Centres the text under the images */
+    max-width: 15%; /* The maximum width for team members */
 }
 
 .team-member img {
-    width: 100%; /* Fait en sorte que l'image occupe 100% de la largeur du div .team-member */
-    border-radius: 50%; /* Rend l'image ronde */
-    margin-bottom: 10%; /* Espace entre l'image et le texte en dessous */
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 10%;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6); /* Horizontal offset, Vertical offset, Blur radius, Color */
 }
 
+
 .team-member h3 {
-    margin: 10px 0; /* Ajoute un espace au-dessus et en dessous du nom */
+    margin: 1.05%;
     color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Horizontal offset, Vertical offset, Blur radius, Color */
 }
 
 .team-member p {
-    font-size: 0.9em; /* Réduit la taille du texte pour la description */
+    font-size: 90%;
     color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Horizontal offset, Vertical offset, Blur radius, Color */
 }
+
 
 .team-member a {
   text-decoration: none;
   color: white;
 }
-  
+
 /* Boutton du github */
 
 .btn {
