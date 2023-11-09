@@ -49,6 +49,8 @@ This project is licensed under the MIT License.
 ## Contact
 
 - Mohammad Baker – [mohamadmbaker@gmail.com](mailto:mohamadmbaker@gmail.com)
+- Maxime Viel - [maxime.viel@epita.fr](mailto:maxime.viel@epita.fr)
+- Mohammed ADDI - [mohammed.addi@epita.fr](mailto:mohammed.addi@epita.fr)
 - Project Link: [https://github.com/Warnex04/Dashboard-Website](https://github.com/Warnex04/Dashboard-Website)
 
 ## Acknowledgments
