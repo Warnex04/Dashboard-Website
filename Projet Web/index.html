@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+    <title>Accueil</title>
+    <style>
+
+      body, html {
+        overflow: hidden;
+        height: 100%;
+        background-image: url('Data/landing_page.jpg'); 
+        background-size: cover; /* Ceci va couvrir toute la page, sans répétition */
+        background-repeat: no-repeat; /* Pour éviter la répétition de l'image */
+        background-position: center center; /* Pour centrer l'image dans la page */
+        font-family: Arial, sans-serif;
+      }
+      
+      .bg-image {
+        /* L'image de fond utilisée */
+        background-image: url('landing_page.jpg');
+        
+        /* Set the height to 100% of the viewport height */
+        height: 100vh;
+      
+        /* Centrer et étendre l'image de fond */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+        .bg-text{
+          font-weight: bold;
+          position: absolute;
+          top: 15%; 
+          left: 5%; 
+          width: 100%; 
+          height: 15%; 
+          padding: 20px;
+          box-sizing: border-box; 
+      
+        }
+        .bg-text h1{
+          color: white;
+        }
+        .bg-text p{
+          color: #005B41;
+        }
+
+ 
+
+        .btn {
+       --color: #005B41;
+       --color2: white;
+       padding: 0.8em 1.75em;
+       background-color: transparent;
+       border-radius: 6px;
+       border: .3px solid var(--color);
+       transition: .5s;
+       position: absolute;
+       top: 45%; 
+      left: 10%; 
+       
+       overflow: hidden;
+       cursor: pointer;
+       z-index: 1;
+       font-weight: 300;
+       font-size: 17px;
+       font-family: 'Roboto', 'Segoe UI', sans-serif;
+       text-transform: uppercase;
+       color: var(--color);
+       font-family: Arial, sans-serif;
+       text-decoration: none;
+      }
+
+
+      .btn::after, .btn::before {
+       content: '';
+       display: block;
+       height: 100%;
+       width: 100%;
+       transform: skew(90deg) translate(-50%, -50%);
+       position: absolute;
+       inset: 50%;
+       left: 25%;
+       z-index: -1;
+       transition: .5s ease-out;
+       background-color: var(--color);
+      }
+      
+      .btn::before {
+       top: -50%;
+       left: -25%;
+       transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+      }
+      
+      .btn:hover::before {
+       transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+      }
+      
+      .btn:hover::after {
+       transform: skew(45deg) translate(-50%, -50%);
+      }
+      
+      .btn:hover {
+       color: var(--color2);
+       font-family: Arial, sans-serif;
+       text-decoration: none;
+      }
+      
+      .btn:active {
+       filter: brightness(.7);
+       transform: scale(.98);
+      }
+      
+  
+
+   
+      
+      nav {
+          background-color: transparent;
+          color: white;
+          padding: 10px 0;
+      }
+      
+      nav ul {
+          list-style: none;
+          display: flex;
+          justify-content: center;
+      }
+      
+      nav ul li {
+          margin: 0 20px;
+      }
+      
+      nav ul li a {
+          color: white;
+          text-decoration: none;
+          font-weight: bold;
+          padding: 5px 10px; /* Ajout d'un padding pour augmenter la zone cliquable */
+          display: block; /* Pour que le padding fonctionne correctement */
+          border-bottom: 2px solid rgba(215, 20, 20, 0);
+      }
+      
+      nav ul li a:hover {
+          background-color: #1c1c1c; /* Un gris plus foncé pour le survol */
+          border-bottom: 2px solid rgba(0, 91, 65, 0.8);
+         
+      }
+    
+      p {
+  white-space: nowrap; /* Assure que le texte s'affiche sur une seule ligne */
+  overflow: hidden; /* Cache le texte qui dépasse de l'élément */
+  width: 0; /* Commence avec un élément de largeur 0 qui va grandir */
+  animation: typing 3.5s steps(40, end) forwards;
+}
+      
+
+/* Animation pour l'effet d'écriture */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+
+      
+      </style>
+      
+</head>
+<body>
+
+  <nav>
+      <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="statistiques.html">Statistiques</a></li>
+          <li><a href="about.html">About</a></li>
+      </ul>
+  </nav>
+
+
+
+  <div class="bg-text">
+    <h1>Interactive Data Explorer </h1>
+    <p> Experience the Iris Dataset Like Never Before!</p>
+  </div>
+  <a href="dashboard.html" class="btn">Let's get started</a>
+
+<div id="typewriter"></div>
+    <script src="js/script.js"></script>
+</body>
+</html>
