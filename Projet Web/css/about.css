@@ -1,0 +1,130 @@
+html, body {
+    height: 100%; /* Ensure the html and body are at least the height of the viewport */
+    margin: 0; /* Reset any default margin */
+    padding: 0; /* Reset any default padding */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: white; /* For better readability on a black background */
+    background: rgb(30,33,33);
+    background: -moz-linear-gradient(145deg, rgba(30,33,33,1) 0%, rgba(68,75,75,1) 50%, rgba(84,94,94,1) 100%);
+    background: -webkit-linear-gradient(145deg, rgba(30,33,33,1) 0%, rgba(68,75,75,1) 50%, rgba(84,94,94,1) 100%);
+    background: linear-gradient(145deg, rgba(30,33,33,1) 0%, rgba(68,75,75,1) 50%, rgba(84,94,94,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1e2121",endColorstr="#545e5e",GradientType=1);
+    min-height: 100%; /* Ensures that the body is at least the height of the viewport */
+    box-sizing: border-box; /* Ensures padding and border are included in the height */
+}
+
+nav {
+    background-color: transparent;
+    color: white;
+    padding: 10px 0;
+    background: rgb(30,33,33);
+    background: -moz-linear-gradient(145deg, rgba(30,33,33,1) 0%, rgba(68,75,75,1) 50%, rgba(84,94,94,1) 100%);
+    background: -webkit-linear-gradient(145deg, rgba(30,33,33,1) 0%, rgba(68,75,75,1) 50%, rgba(84,94,94,1) 100%);
+    background: linear-gradient(145deg, rgba(30,33,33,1) 0%, rgba(68,75,75,1) 50%, rgba(84,94,94,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1e2121",endColorstr="#545e5e",GradientType=1);
+    border: 3px solid linear-gradient(325deg, rgba(30,33,33,1) 0%, rgba(68,75,75,1) 50%, rgba(84,94,94,1) 100%);
+    border-radius: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px; /* Padding to increase clickable area */
+    display: block; /* For padding to work correctly */
+    border-bottom: 2px solid rgba(0,125,50, 0); /* Green line below the hovered item */
+}
+
+nav ul li a:hover {
+    background-color: #1c1c1c; /* Darker gray for hover */
+    border-bottom: 2px solid rgba(0,125,50, 1); /* Green line below the hovered item */
+}
+
+h1 {
+    text-align: center;
+}
+
+
+.team-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 3%;
+}
+
+.team-member {
+    text-align: center; /* Centre le texte sous les images */
+    max-width: 15%; /* La largeur maximale pour les membres de l'équipe */
+}
+
+.team-member img {
+    width: 100%; /* Fait en sorte que l'image occupe 100% de la largeur du div .team-member */
+    border-radius: 50%; /* Rend l'image ronde */
+    margin-bottom: 10%; /* Espace entre l'image et le texte en dessous */
+}
+
+.team-member h3 {
+    margin: 10px 0; /* Ajoute un espace au-dessus et en dessous du nom */
+    color: white;
+}
+
+.team-member p {
+    font-size: 0.9em; /* Réduit la taille du texte pour la description */
+    color: white;
+}
+
+.team-member a {
+  text-decoration: none;
+  color: white;
+}
+  
+/* Boutton du github */
+
+.btn {
+    display: grid;
+    place-items: center;
+    background: #e3edf7;
+    padding: 1px;
+    border-radius: 10px;
+    
+    border: 1px solid rgba(0,0,0,0);
+    cursor: pointer;
+    transition: transform 0.5s;
+    top: 10%;
+    position: relative; /* ou 'absolute', 'fixed', 'sticky' */
+    left: 2%;
+  
+
+}
+  
+  .btn:hover {
+    box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
+            inset -4px -4px 6px -1px rgba(255,255,255,0.7),
+            -0.5px -0.5px 0px rgba(255,255,255,1),
+            0.5px 0.5px 0px rgba(0,0,0,0.15),
+            0px 12px 10px -10px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.1);
+    transform: translateY(0.5em);
+  }
+  
+  .btn svg {
+    transition: transform 0.5s;
+  }
+  
+  .btn:hover svg {
+    transform: scale(0.9);
+    fill: #333333;
+  }
