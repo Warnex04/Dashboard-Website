@@ -1,4 +1,4 @@
-const text = 'Ceci est une petite explication ou une introduction à votre contenu.';
+const text = ' Experience the Iris Dataset Like Never Before!';
 let index = 0;
 
 function typeWriter() {
