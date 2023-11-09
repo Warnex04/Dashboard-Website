@@ -1,8 +1,9 @@
 html, body {
     height: 100%; /* Ensure the html and body are at least the height of the viewport */
-    margin: 0; /* Reset any default margin */
-    padding: 0; /* Reset any default padding */
+    overflow: hidden;
 }
+
+
 
 body {
     font-family: Arial, sans-serif;
@@ -12,8 +13,7 @@ body {
     background: -webkit-linear-gradient(145deg, rgba(30,33,33,1) 0%, rgba(68,75,75,1) 50%, rgba(84,94,94,1) 100%);
     background: linear-gradient(145deg, rgba(30,33,33,1) 0%, rgba(68,75,75,1) 50%, rgba(84,94,94,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1e2121",endColorstr="#545e5e",GradientType=1);
-    min-height: 100%; /* Ensures that the body is at least the height of the viewport */
-    box-sizing: border-box; /* Ensures padding and border are included in the height */
+
 }
 
 nav {
@@ -115,9 +115,8 @@ h1 {
     border: 1px solid rgba(0,0,0,0);
     cursor: pointer;
     transition: transform 0.5s;
-    top: 10%;
     position: relative; /* ou 'absolute', 'fixed', 'sticky' */
-    left: 2%;
+    left: 49%;
   
 
 }
