@@ -44,9 +44,12 @@
         .bg-text p{
           color: #005B41;
         }
+
+ 
+
         .btn {
        --color: #005B41;
-       --color2: rgb(10, 25, 30);
+       --color2: white;
        padding: 0.8em 1.75em;
        background-color: transparent;
        border-radius: 6px;
@@ -64,8 +67,11 @@
        font-family: 'Roboto', 'Segoe UI', sans-serif;
        text-transform: uppercase;
        color: var(--color);
+       font-family: Arial, sans-serif;
+       text-decoration: none;
       }
-      
+
+
       .btn::after, .btn::before {
        content: '';
        display: block;
@@ -96,6 +102,8 @@
       
       .btn:hover {
        color: var(--color2);
+       font-family: Arial, sans-serif;
+       text-decoration: none;
       }
       
       .btn:active {
@@ -103,11 +111,9 @@
        transform: scale(.98);
       }
       
-      .btn a {
-    text-decoration: none;
-    color: #005B41;
-    font-family: Arial, sans-serif;
-      }
+  
+
+   
       
       nav {
           background-color: transparent;
@@ -176,9 +182,9 @@
     <h1>Interactive Data Explorer </h1>
     <p> Experience the Iris Dataset Like Never Before!</p>
   </div>
+  <a href="dashboard.html" class="btn">Let's get started</a>
 
-<button class="btn"><a href="dashboard.html">Let's get started</a> 
-</button>
+<div id="typewriter"></div>
     <script src="js/script.js"></script>
 </body>
 </html>
