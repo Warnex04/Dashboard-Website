@@ -35,6 +35,9 @@ The following features are currently under development and will be part of futur
 
 Stay tuned for updates as we work on bringing these features to life!
 
+![Use case diagram of planned features](https://i.imgur.com/MW8ta0v.png)
+
+
 ## Contributing
 
 We welcome contributions to help us improve and expand the dashboard by submitting your pull requests.
@@ -46,6 +49,8 @@ This project is licensed under the MIT License.
 ## Contact
 
 - Mohammad Baker – [mohamadmbaker@gmail.com](mailto:mohamadmbaker@gmail.com)
+- Maxime Viel - [maxime.viel@epita.fr](mailto:maxime.viel@epita.fr)
+- Mohammed ADDI - [mohammed.addi@epita.fr](mailto:mohammed.addi@epita.fr)
 - Project Link: [https://github.com/Warnex04/Dashboard-Website](https://github.com/Warnex04/Dashboard-Website)
 
 ## Acknowledgments
