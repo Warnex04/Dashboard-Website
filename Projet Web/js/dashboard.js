@@ -27,7 +27,6 @@ document.getElementById('upload-form').addEventListener('submit', function(event
     }
 });
 
-
 function createScatterPlot(data) {
     // Clear any previous scatter plots
     const existingCanvas = document.getElementById('scatterPlot');
@@ -52,12 +51,6 @@ function createScatterPlot(data) {
         y: item['sepal.width']
     }));
 
-    // Log the filtered data to ensure it's correct
-    console.log('Setosa:', setosaData);
-    console.log('Versicolor:', versicolorData);
-    console.log('Virginica:', virginicaData);
-
-    // Setup the data for the scatter plot
     const scatterData = {
         datasets: [{
             label: 'Setosa',
@@ -77,38 +70,48 @@ function createScatterPlot(data) {
         }]
     };
 
-    // Initialize the scatter plot
-    new Chart(canvas.getContext('2d'), {
+    new Chart(canvas, {
         type: 'scatter',
         data: scatterData,
         options: {
             scales: {
-                xAxes: [{
-                    gridLines: {
-                        color: 'rgba(255, 255, 255, 0.4)', // Set to white for high contrast
-                        lineWidth: 2,
-
+                x: {
+                    ticks: {
+                        color: 'white'
                     },
-                    scaleLabel: {
-                        display: true,
-                        labelString: 'Sepal Length (cm)'
-                    }
-                }],
-                yAxes: [{
-                    gridLines: {
-                        color: 'rgba(255, 255, 255, 0.4)', // Set to white for high contrast
-                        lineWidth: 2,
-
+                    grid: {
+                        color: 'rgba(255, 255, 255, 0.7)',
+                        borderColor: 'white'
                     },
-                    scaleLabel: {
+                    title: {
                         display: true,
-                        labelString: 'Sepal Width (cm)'
+                        text: 'Sepal Length (cm)',
+                        color: 'white'
                     }
-                }]
+                },
+                y: {
+                    ticks: {
+                        color: 'white'
+                    },
+                    grid: {
+                        color: 'rgba(255, 255, 255, 0.7)',
+                        borderColor: 'white'
+                    },
+                    title: {
+                        display: true,
+                        text: 'Sepal Width (cm)',
+                        color: 'white'
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    labels: {
+                        color: 'white'
+                    }
+                }
             }
         }
-        
-        
     });
 }
 
@@ -118,63 +121,85 @@ function createBarCharts(data) {
     const features = ['Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width']; // Use friendly names
     const operations = ['Mean', 'Sum', 'Min', 'Max']; // Array of operations for naming
     const speciesData = species.map(speciesName => {
-        return features.map(feature => {
-            // Perform the data aggregation here
-            // This example assumes you're calculating the mean
-            const filteredData = data.filter(item => item.variety.trim() === speciesName);
-            const sum = filteredData.reduce((acc, curr) => acc + curr[feature.toLowerCase().replace(' ', '.')], 0);
-            return sum / filteredData.length; // mean
-        });
+      return features.map(feature => {
+        // Perform the data aggregation here
+        // This example assumes you're calculating the mean
+        const filteredData = data.filter(item => item.variety.trim() === speciesName);
+        const sum = filteredData.reduce((acc, curr) => acc + curr[feature.toLowerCase().replace(' ', '.')], 0);
+        return sum / filteredData.length; // mean
+      });
     });
-
+  
     // Create a bar chart for each feature with the operation name
     features.forEach((feature, index) => {
-        const canvasId = `chart${index + 1}`;
-        const canvas = document.getElementById(canvasId);
-        if (!canvas) {
-            console.error(`Canvas with id ${canvasId} not found.`);
-            return;
-        }
-        const ctx = canvas.getContext('2d');
-        new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: species,
-                datasets: speciesData.map((data, speciesIndex) => ({
-                    label: species[speciesIndex],
-                    data: [data[index]], // each dataset has only one value per species for this feature
-                    backgroundColor: `rgba(${255 - speciesIndex * 100}, ${99 + speciesIndex * 50}, ${132 + speciesIndex * 50}, 0.4)`,
-                    borderColor: `rgba(${255 - speciesIndex * 100}, ${99 + speciesIndex * 50}, ${132 + speciesIndex * 50}, 1)`
-                }))
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false, // Set this to false to allow full responsiveness
-                title: {
+      const canvasId = `chart${index + 1}`;
+      const canvas = document.getElementById(canvasId);
+      if (!canvas) {
+        console.error(`Canvas with id ${canvasId} not found.`);
+        return;
+      }
+      const ctx = canvas.getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: species,
+          datasets: speciesData.map((data, speciesIndex) => ({
+            label: species[speciesIndex],
+            data: [data[index]], // each dataset has only one value per species for this feature
+            backgroundColor: `rgba(${255 - speciesIndex * 100}, ${99 + speciesIndex * 100}, ${132 + speciesIndex * 100}, 1)`,
+            borderColor: `rgba(${255 - speciesIndex * 100}, ${99 + speciesIndex * 100}, ${132 + speciesIndex * 100}, 1)`,
+            grouped: true
+          }))
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins:{
+                legend: {
+                    title:{
+                        display: true,
+                        text: `${operations[index]} of ${feature}`,
+                        color: 'white'
+                    },
                     display: true,
-                    text: `${operations[index]} of ${feature}`
+                    position: 'top',
+                    maxHeight: 60,
+                    maxWidth: 60,
+                    labels: {
+                      usePointStyle: true,
+                      padding: 4,
+                      color:'white',
+                      font: {
+                        size: 14, // Set initial font size
+                      }
+                    }
+                  }
+            },
+            scales:{
+                x:{
+                    ticks:{
+                        display: false
+                    },
+                    grid:{
+                        color: 'white'
+                    }
                 },
-                scales: {
-                    xAxes: [{
-                        ticks: {
-                            display: false // This will remove the labels on the X-axis
-                        },
-                        gridLines: {
-                            display: false // This will remove the grid lines on the X-axis
-                        }
-                    }],
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        },
-                        scaleLabel: {
-                            display: true,
-                            labelString: `${feature} (cm)`
-                        }
-                    }]
+                y:{
+                    grid:{
+                        color: 'white'
+                    },
+                    title:{
+                        display: false
+                    },
+                    ticks:{
+                        color: 'white'
+                    }
                 }
             }
+
             
-        });
+        }
+      });
     });
-}
+  }
+  

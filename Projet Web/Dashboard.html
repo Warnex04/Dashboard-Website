@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="css\dashboard.css">
+    <link rel="stylesheet" href="css/dashboard.css">
     <!-- Include Chart.js from CDN for data visualization -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <!-- Include PapaParse from CDN for parsing CSV files -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 </head>
@@ -26,23 +26,25 @@
         <button type="submit" id="upload-btn">Upload CSV</button>
     </form>
 
-    <!-- Scatter Plot Container -->
-    <div>
-        <canvas id="scatterPlot"></canvas>
-    </div>
+
 
     <div class="chart-grid">
         <div class="chart-item"><canvas id="chart1"></canvas></div>
-        <div class="chart-item"><canvas id="chart2"></canvas></div>
+        <div class="chart-item"><canvas id="pieChart1"></canvas></div>
         <div class="chart-item"><canvas id="chart3"></canvas></div>
         <div class="chart-item"><canvas id="chart4"></canvas></div>
-        <div class="chart-item"><canvas id="chart5"></canvas></div>
-        <div class="chart-item"><canvas id="chart6"></canvas></div>
+        <div class="chart-item"><canvas id="pieChart2"></canvas></div>
+        <div class="chart-item"><canvas id="chart2"></canvas></div>
         <div class="chart-item"><canvas id="chart7"></canvas></div>
         <div class="chart-item"><canvas id="chart8"></canvas></div>
         <div class="chart-item"><canvas id="chart9"></canvas></div>
 
         
+    </div>
+
+    <!-- Scatter Plot Container -->
+    <div>
+        <canvas id="scatterPlot"></canvas>
     </div>
       
 
