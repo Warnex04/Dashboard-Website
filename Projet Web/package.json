@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "chartjs-chart-box-and-violin-plot": "^4.0.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  }
+}

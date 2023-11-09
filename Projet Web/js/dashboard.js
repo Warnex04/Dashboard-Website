@@ -1,3 +1,5 @@
+// Chart.register(BoxPlotController)
+
 document.getElementById('upload-form').addEventListener('submit', function(event) {
     event.preventDefault();
     const fileInput = document.getElementById('file-input');
@@ -15,11 +17,23 @@ document.getElementById('upload-form').addEventListener('submit', function(event
                     return;
                 }
                 
+                
+
+                
                 // Call the scatter plot creation function
                 createScatterPlot(results.data);
                 
                 // Call the bar charts creation function
                 createBarCharts(results.data);
+
+                // Call the pie charts creation function
+                createPieChart(results.data)
+
+                // Call the radar charts creation function
+                createRadarChart(results.data)
+
+                // Call the Boxplot charts creation function
+                // createBoxPlots(results.data)
             }
         });
     } else {
@@ -202,4 +216,157 @@ function createBarCharts(data) {
       });
     });
   }
+
+  function createPieChart(data) {
+    // Assume we have an array of species with their corresponding counts
+    const speciesCount = data.reduce((acc, item) => {
+        acc[item.variety] = (acc[item.variety] || 0) + 1;
+        return acc;
+    }, {});
+
+    // Convert the species count into a format suitable for the pie chart
+    const pieChartData = {
+        labels: Object.keys(speciesCount),
+        datasets: [{
+            data: Object.values(speciesCount),
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.5)',
+                'rgba(54, 162, 235, 0.5)',
+                'rgba(255, 206, 86, 0.5)',
+                'rgba(75, 192, 192, 0.5)',
+                // ...more colors for other categories
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                // ...more colors for other categories
+            ],
+            borderWidth: 1
+        }]
+    };
+
+    // Get or create the canvas element
+    let canvas = document.getElementById('pieChart1');
+    if (!canvas) {
+        canvas = document.createElement('canvas');
+        canvas.id = 'pieChart1';
+        document.body.appendChild(canvas);
+    }
+    const ctx = canvas.getContext('2d');
+
+    // If there's already a chart instance, destroy it to ensure a fresh start
+    if (window.myPieChart instanceof Chart) {
+        window.myPieChart.destroy();
+    }
+
+    // Create the pie chart
+    window.myPieChart = new Chart(ctx, {
+        type: 'pie',
+        data: pieChartData,
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    labels: {
+                        color: 'white' // or any color you need
+                    }
+                },
+                title: {
+                    display: true,
+                    text: 'Species Distribution',
+                    color: 'white'
+                }
+            }
+        }
+    });
+}
+
+function createRadarChart(data) {
+    // Aggregate data for each species as in createBarCharts
+    const species = ['Setosa', 'Versicolor', 'Virginica'];
+    const features = ['Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width'];
   
+    const speciesData = species.map(speciesName => {
+      return features.map(feature => {
+        const filteredData = data.filter(item => item.variety.trim() === speciesName);
+        const sum = filteredData.reduce((acc, curr) => acc + curr[feature.toLowerCase().replace(' ', '.')], 0);
+        return sum / filteredData.length; // mean
+      });
+    });
+  
+    // Convert to a format suitable for radar chart
+    const radarChartData = {
+      labels: features,
+      datasets: speciesData.map((data, index) => ({
+        label: species[index],
+        data: data,
+        fill: true,
+        backgroundColor: `rgba(${255 - index * 100}, ${99 + index * 50}, ${132 + index * 50}, 0.3)`,
+        borderColor: `rgba(${255 - index * 100}, ${99 + index * 50}, ${132 + index * 50}, 1)`,
+        pointBackgroundColor: `rgba(${255 - index * 100}, ${99 + index * 50}, ${132 + index * 50}, 1)`,
+        pointBorderColor: 'white'
+      }))
+    };
+  
+    // Get or create the canvas element
+    let canvas = document.getElementById('radarChart');
+    if (!canvas) {
+      canvas = document.createElement('canvas');
+      canvas.id = 'radarChart';
+      document.body.appendChild(canvas);
+    }
+    const ctx = canvas.getContext('2d');
+  
+    // If there's already a chart instance, destroy it to ensure a fresh start
+    if (window.myRadarChart instanceof Chart) {
+      window.myRadarChart.destroy();
+    }
+  
+    // Create the radar chart
+    window.myRadarChart = new Chart(ctx, {
+      type: 'radar',
+      data: radarChartData,
+      options: {
+        elements: {
+          line: {
+            borderWidth: 3
+          }
+        },
+        scales: {
+          r: {
+            angleLines: {
+              display: false
+            },
+            suggestedMin: 0,
+            suggestedMax: 5,
+            ticks: {
+              backdropColor: 'rgba(255, 255, 255, 0)',
+              color: 'white'
+            },
+            grid:{
+                color: 'rgba(255,255,255,0.6)'
+
+            },
+            pointLabels:{
+                color:'white'
+            }
+          }
+        },
+        plugins: {
+          legend: {
+            labels: {
+              color: 'white' // Change as needed
+            }
+          },
+          title: {
+            display: true,
+            text: 'Average Feature Comparison by Species',
+            color: 'white' // Change as needed
+          }
+        }
+      }
+    });
+  }
+
