@@ -35,6 +35,9 @@ The following features are currently under development and will be part of futur
 
 Stay tuned for updates as we work on bringing these features to life!
 
+![Use case diagram of planned features](https://i.imgur.com/MW8ta0v.png)
+
+
 ## Contributing
 
 We welcome contributions to help us improve and expand the dashboard by submitting your pull requests.
