@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css\dashboard.css">
+    <!-- Include Chart.js from CDN for data visualization -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <!-- Include PapaParse from CDN for parsing CSV files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="statistiques.html">Statistiques</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+    <h1>Dashboard</h1>
+
+    <!-- File Upload Form -->
+    <form id="upload-form">
+        <input type="file" id="file-input" accept=".csv" required />
+        <button type="submit" id="upload-btn">Upload CSV</button>
+    </form>
+
+    <!-- Scatter Plot Container -->
+    <div>
+        <canvas id="scatterPlot"></canvas>
+    </div>
+
+    <div class="chart-grid">
+        <div class="chart-item"><canvas id="chart1"></canvas></div>
+        <div class="chart-item"><canvas id="chart2"></canvas></div>
+        <div class="chart-item"><canvas id="chart3"></canvas></div>
+        <div class="chart-item"><canvas id="chart4"></canvas></div>
+        <div class="chart-item"><canvas id="chart5"></canvas></div>
+        <div class="chart-item"><canvas id="chart6"></canvas></div>
+        <div class="chart-item"><canvas id="chart7"></canvas></div>
+        <div class="chart-item"><canvas id="chart8"></canvas></div>
+        <div class="chart-item"><canvas id="chart9"></canvas></div>
+
+        
+    </div>
+      
+
+    <!-- External JavaScript File -->
+    <script src="js/dashboard.js"></script>
+
+
+</body>
+</html>

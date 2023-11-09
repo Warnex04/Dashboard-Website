@@ -42,12 +42,6 @@ h1 {
 /* page index */
 
 
-
-
-
-
-
-
 body, html {
     height: 100%;
     margin: 0;
@@ -232,7 +226,7 @@ body {
   }
   
   #mask2 rect {
-    x: 10;
+    /*x: 10;*/
     animation: pulse 1.90476s infinite;
     animation-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950);
     animation-delay: 0.47619s; /* This is the duration divided by 4 */
