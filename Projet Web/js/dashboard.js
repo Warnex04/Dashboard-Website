@@ -1,8 +1,13 @@
 // Chart.register(BoxPlotController)
+$(document).ready(function(){
+  $('form input').change(function () {
+    $('form p').text(this.files.length + " file(s) selected");
+  });
+});
 
-document.getElementById('upload-form').addEventListener('submit', function(event) {
+document.getElementById('dragForm').addEventListener('submit', function(event) {
     event.preventDefault();
-    const fileInput = document.getElementById('file-input');
+    const fileInput = document.getElementById('file-post');
     const file = fileInput.files[0];
 
     if (file) {
@@ -43,13 +48,14 @@ document.getElementById('upload-form').addEventListener('submit', function(event
 
 function createScatterPlot(data) {
     // Clear any previous scatter plots
-    const existingCanvas = document.getElementById('scatterPlot');
+    let container = document.querySelector('.scatterplot');
+    const existingCanvas = container.querySelector('canvas');
     if (existingCanvas) {
         existingCanvas.remove();
     }
     const canvas = document.createElement('canvas');
     canvas.id = 'scatterPlot';
-    document.body.appendChild(canvas);
+    container.appendChild(canvas); // Append to the div with class 'scatterplot'
 
     // Filter and map the data for each variety
     const setosaData = data.filter(item => item.variety.trim() === 'Setosa').map(item => ({
