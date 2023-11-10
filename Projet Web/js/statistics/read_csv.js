@@ -1,5 +1,7 @@
 function readCSVFile() {
     var files = document.querySelector('#file').files;
+    //const fileInput = document.getElementById('file-post');
+    //const file = fileInput.files[0];
 
     if (files.length > 0) {
 
