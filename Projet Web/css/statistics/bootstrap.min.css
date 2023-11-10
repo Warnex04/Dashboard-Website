@@ -4364,7 +4364,8 @@ textarea.form-control-lg {
         display: flex;
         flex-grow: 0;
         padding: 0;
-        overflow-y: visible
+        overflow-y: visible;
+        background-color: transparent!important
     }
 }
 
@@ -4421,7 +4422,8 @@ textarea.form-control-lg {
         display: flex;
         flex-grow: 0;
         padding: 0;
-        overflow-y: visible
+        overflow-y: visible;
+        background-color: transparent!important
     }
 }
 
@@ -4478,7 +4480,8 @@ textarea.form-control-lg {
         display: flex;
         flex-grow: 0;
         padding: 0;
-        overflow-y: visible
+        overflow-y: visible;
+        background-color: transparent!important
     }
 }
 
@@ -4535,7 +4538,8 @@ textarea.form-control-lg {
         display: flex;
         flex-grow: 0;
         padding: 0;
-        overflow-y: visible
+        overflow-y: visible;
+        background-color: transparent!important
     }
 }
 
@@ -4592,7 +4596,8 @@ textarea.form-control-lg {
         display: flex;
         flex-grow: 0;
         padding: 0;
-        overflow-y: visible
+        overflow-y: visible;
+        background-color: transparent!important
     }
 }
 
@@ -4648,7 +4653,8 @@ textarea.form-control-lg {
     display: flex;
     flex-grow: 0;
     padding: 0;
-    overflow-y: visible
+    overflow-y: visible;
+    
 }
 
 .navbar-dark,.navbar[data-bs-theme=dark] {
@@ -7258,7 +7264,8 @@ textarea.form-control-lg {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: var(--bs-offcanvas-padding-y) var(--bs-offcanvas-padding-x)
+    padding: var(--bs-offcanvas-padding-y) var(--bs-offcanvas-padding-x);
+    background-color: transparent!important
 }
 
 .offcanvas-header .btn-close {
@@ -7276,7 +7283,8 @@ textarea.form-control-lg {
 .offcanvas-body {
     flex-grow: 1;
     padding: var(--bs-offcanvas-padding-y) var(--bs-offcanvas-padding-x);
-    overflow-y: auto
+    overflow-y: auto;
+    background-color: transparent!important
 }
 
 .placeholder {
