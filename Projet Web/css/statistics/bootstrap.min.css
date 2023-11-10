@@ -3,7 +3,7 @@
  * Copyright 2011-2023 The Bootstrap Authors
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-:root,[data-bs-theme=light] {
+:root,/*[data-bs-theme=light] {
     --bs-blue: #0d6efd;
     --bs-indigo: #6610f2;
     --bs-purple: #6f42c1;
@@ -121,13 +121,13 @@
     --bs-form-valid-border-color: #198754;
     --bs-form-invalid-color: #dc3545;
     --bs-form-invalid-border-color: #dc3545
-}
+}*/
 
-[data-bs-theme=dark] {
+/*[data-bs-theme=dark] {
     color-scheme: dark;
     --bs-body-color: #dee2e6;
     --bs-body-color-rgb: 222,226,230;
-    --bs-body-bg: #212529;
+    --bs-body-bg: transparent; #212529;
     --bs-body-bg-rgb: 33,37,41;
     --bs-emphasis-color: #fff;
     --bs-emphasis-color-rgb: 255,255,255;
@@ -177,7 +177,7 @@
     --bs-form-valid-border-color: #75b798;
     --bs-form-invalid-color: #ea868f;
     --bs-form-invalid-border-color: #ea868f
-}
+}*/
 
 *,::after,::before {
     box-sizing: border-box
@@ -4109,7 +4109,7 @@ textarea.form-control-lg {
 
 .nav-tabs .nav-item.show .nav-link,.nav-tabs .nav-link.active {
     color: var(--bs-nav-tabs-link-active-color);
-    background-color: var(--bs-nav-tabs-link-active-bg);
+    background-color: transparent; /*var(--bs-nav-tabs-link-active-bg);*/
     border-color: var(--bs-nav-tabs-link-active-border-color)
 }
 
